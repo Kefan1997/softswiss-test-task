@@ -1,23 +1,182 @@
-import logo from './logo.svg';
-import './App.css';
+import logoIcon from './images/logo.svg';
+import heroPlanet from './images/earth.png';
+import React, { useState } from 'react';
+import './App.scss';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleToggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="page">
+      <header className="header">
+        <div className="header__inner">
+          <div className="header__logo">
+            <img src={logoIcon} alt="SpaceGo logo" className="header__logo-img" />
+            <span className="header__logo-text">SpaceGo</span>
+          </div>
+
+          <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
+            <a href="#hero" className="header__nav-link" onClick={closeMenu}>
+              Home
+            </a>
+            <a href="#offers" className="header__nav-link" onClick={closeMenu}>
+              Products
+            </a>
+            <a href="#journey" className="header__nav-link" onClick={closeMenu}>
+              About
+            </a>
+          </nav>
+
+          <button
+            type="button"
+            className={`header__burger ${isMenuOpen ? 'header__burger--active' : ''}`}
+            onClick={handleToggleMenu}
+            aria-label="Toggle navigation"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+
+        {isMenuOpen && <div className="header__backdrop" onClick={closeMenu} />}
       </header>
+
+      <main className="page__content">
+        {/* HERO */}
+        <section className="hero" id="hero">
+          <div className="hero__inner">
+            <div className="hero__content">
+              <h1 className="hero__title">
+                Discover the vast
+                <br />
+                expanses of <span className="hero__title-highlight">space</span>
+              </h1>
+
+              <p className="hero__subtitle">
+                Where the possibilities are{' '}
+                <span className="hero__subtitle-highlight">endless!</span>
+              </p>
+
+              <button type="button" className="button button--primary hero__button">
+                Learn more
+              </button>
+            </div>
+
+            <div className="hero__image-wrapper">
+              <img src={heroPlanet} alt="Planet Earth with a rocket" className="hero__image" />
+            </div>
+          </div>
+        </section>
+
+        {/* OFFERS */}
+        <section className="offers" id="offers">
+          <div className="offers__inner">
+            <h2 className="offers__title">Offers</h2>
+
+            <article className="offer-card offer-card--wide offer-card--image1">
+              <div className="offer-card__content">
+                <h3 className="offer-card__title">Move the borders of reality!</h3>
+                <p className="offer-card__text">
+                  Go on a space adventure – it&apos;s possible with us!
+                </p>
+                <button type="button" className="button button--primary offer-card__button">
+                  Learn more
+                </button>
+              </div>
+            </article>
+
+            <div className="offers__grid">
+              <article className="offer-card offer-card--medium offer-card--image2">
+                <div className="offer-card__content">
+                  <h3 className="offer-card__title">Space is not just stars and planets</h3>
+                  <p className="offer-card__text">Go on a space adventure!</p>
+                  <button type="button" className="button button--primary offer-card__button">
+                    Learn more
+                  </button>
+                </div>
+              </article>
+
+              <article className="offer-card offer-card--medium offer-card--image3">
+                <div className="offer-card__content">
+                  <h3 className="offer-card__title">For those who dream of stars</h3>
+                  <p className="offer-card__text">Our offer: make your dream come true.</p>
+                  <button type="button" className="button button--primary offer-card__button">
+                    Learn more
+                  </button>
+                </div>
+              </article>
+            </div>
+
+            {/* 4-я (большая снизу) */}
+            <article className="offer-card offer-card--wide offer-card--bottom offer-card--image4">
+              <div className="offer-card__content">
+                <h3 className="offer-card__title">Fulfill your fantastic dreams</h3>
+                <p className="offer-card__text">Space has never been so close.</p>
+                <button type="button" className="button button--primary offer-card__button">
+                  Learn more
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* ARTICLE + READ MORE (CSS only) */}
+        <section className="article" id="journey">
+          <div className="article__inner">
+            <h2 className="article__title">Embark on a space journey</h2>
+
+            <div className="article__body">
+              <p className="article__text">
+                Space tourism opens up unprecedented and unforgettable adventures for those who are
+                ready to go beyond the familiar. Just imagine: instead of the usual beach vacation,
+                you are waiting for a flight into orbit, weightlessness and views of the Earth from
+                a height of hundreds of kilometers.
+                <span className="article__text-full">
+                  {' '}
+                  Modern technologies are turning what was recently science fiction into reality.
+                  Our company offers safe and carefully prepared tours that will allow you to enjoy
+                  every moment of your journey. Training, support from experienced instructors and
+                  comfortable conditions on board will make your adventure not only exciting, but
+                  also as comfortable as possible.
+                </span>
+              </p>
+
+              <div className="article__controls">
+                <label
+                  htmlFor="article-toggle"
+                  className="article__read-more article__read-more--more"
+                >
+                  Read more
+                </label>
+                <label
+                  htmlFor="article-toggle"
+                  className="article__read-more article__read-more--less"
+                >
+                  Read less
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="footer__inner">
+          <div className="footer__badge">
+            <span className="footer__badge-icon">🚀</span>
+            <span className="footer__badge-text">Exciting space adventure!</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
