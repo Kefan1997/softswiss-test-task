@@ -20,7 +20,7 @@ function App() {
         <div className="header__inner">
           <div className="header__logo">
             <img src={logoIcon} alt="SpaceGo logo" className="header__logo-img" />
-            <span className="header__logo-text">SpaceGo</span>
+            <span className="header__logo-text">GO</span>
           </div>
 
           <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
@@ -56,9 +56,7 @@ function App() {
           <div className="hero__inner">
             <div className="hero__content">
               <h1 className="hero__title">
-                Discover the vast
-                <br />
-                expanses of <span className="hero__title-highlight">space</span>
+                Discover the vast expanses of <span className="hero__title-highlight">space</span>
               </h1>
 
               <p className="hero__subtitle">
@@ -88,7 +86,7 @@ function App() {
                 <p className="offer-card__text">
                   Go on a space adventure – it&apos;s possible with us!
                 </p>
-                <button type="button" className="button button--primary offer-card__button">
+                <button type="button" className="button button--secondary offer-card__button">
                   Learn more
                 </button>
               </div>
@@ -99,7 +97,7 @@ function App() {
                 <div className="offer-card__content">
                   <h3 className="offer-card__title">Space is not just stars and planets</h3>
                   <p className="offer-card__text">Go on a space adventure!</p>
-                  <button type="button" className="button button--primary offer-card__button">
+                  <button type="button" className="button button--secondary offer-card__button">
                     Learn more
                   </button>
                 </div>
@@ -109,7 +107,7 @@ function App() {
                 <div className="offer-card__content">
                   <h3 className="offer-card__title">For those who dream of stars</h3>
                   <p className="offer-card__text">Our offer: make your dream come true.</p>
-                  <button type="button" className="button button--primary offer-card__button">
+                  <button type="button" className="button button--secondary offer-card__button">
                     Learn more
                   </button>
                 </div>
@@ -121,7 +119,7 @@ function App() {
               <div className="offer-card__content">
                 <h3 className="offer-card__title">Fulfill your fantastic dreams</h3>
                 <p className="offer-card__text">Space has never been so close.</p>
-                <button type="button" className="button button--primary offer-card__button">
+                <button type="button" className="button button--secondary offer-card__button">
                   Learn more
                 </button>
               </div>
@@ -136,10 +134,14 @@ function App() {
 
             <div className="article__body">
               <p className="article__text">
-                Space tourism opens up unprecedented and unforgettable adventures for those who are
-                ready to go beyond the familiar. Just imagine: instead of the usual beach vacation,
-                you are waiting for a flight into orbit, weightlessness and views of the Earth from
-                a height of hundreds of kilometers.
+                Travelling into space is one of the most exciting and unforgettable adventures that
+                can change your life forever. And if you have ever dreamed of exploring stars,
+                planets and galaxies, then our company is ready to help you realize this dream. We
+                offer a unique experience that will allow you to go on a space journey and see all
+                the secrets of the universe. We guarantee that every moment in space will be filled
+                with incredible impressions, excitement and new discoveries. Our team of
+                professionals takes care of your safety and comfort so that you can fully enjoy your
+                adventure in space. We offer various options for space excursions.
                 <span className="article__text-full">
                   {' '}
                   Modern technologies are turning what was recently science fiction into reality.
