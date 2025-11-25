@@ -133,6 +133,7 @@ function App() {
           <div className="article__inner">
             <h2 className="article__title">Embark on a space journey</h2>
 
+            <input type="checkbox" id="article-toggle" className="article__toggle" />
             <div className="article__body">
               <p className="article__text">
                 Travelling into space is one of the most exciting and unforgettable adventures that

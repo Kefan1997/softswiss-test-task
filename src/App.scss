@@ -143,7 +143,6 @@ $bp-desktop: 1248px;
         }
       }
 
-
       &:hover .header__nav-icon path {
         fill: url(#navIconGradient);
       }
@@ -205,7 +204,6 @@ $bp-desktop: 1248px;
 .header__backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
   z-index: 40;
 }
 
@@ -539,19 +537,21 @@ $bp-desktop: 1248px;
 }
 
 // Expanded state
-.article__toggle:checked + .article__body {
-  .article__text-full {
-    max-height: 1000px;
-    opacity: 1;
-  }
+.article__toggle {
+  display: none;
+}
 
-  .article__read-more--more {
-    display: none;
-  }
+.article__toggle:checked + .article__body .article__text-full {
+  max-height: 1000px;
+  opacity: 1;
+}
 
-  .article__read-more--less {
-    display: inline-flex;
-  }
+.article__toggle:checked + .article__body .article__read-more--more {
+  display: none;
+}
+
+.article__toggle:checked + .article__body .article__read-more--less {
+  display: inline-flex;
 }
 
 // ====== FOOTER ======
